@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 public class Main {
 
-    //сортировка
+    // метод, который сортирует массив
     public static void sortArr(char[] array) {
 
         for (int i = 0; i < array.length - 1; i++) {
@@ -31,6 +31,8 @@ public class Main {
 
     public static Scanner in = new Scanner(System.in);
     public static void main(String[] args) throws IOException {
+
+        // объявление / ввод всех переменных и структур.
 
         // ввод данных
         int N = in.nextInt();
@@ -61,6 +63,10 @@ public class Main {
             }
         }
 
+        // создаю массивы гласных и согласных букв
+        char[] glas = new char[cnt_glas];
+        char[] sogl = new char[cnt_sogl];
+
         // тут ищу самое частое вхождение
         int maxValue = 0;
         for (int i : alphabet) {
@@ -72,15 +78,11 @@ public class Main {
         // вводим сдвиг для шифра Цезаря
         int K = in.nextInt();
 
-        // создаю массивы гласных и согласных букв
-        char[] glas = new char[cnt_glas];
-        char[] sogl = new char[cnt_sogl];
-
-        // начальный индекс каждого массива
+        // начальный индекс каждого массива(согл и глас букв)
         int i_sogl = 0;
         int i_glas = 0;
 
-        // распределяю по массивам букавы
+        // распределяю по массивам буквы
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < M; j++) {
                 char key = Character.toLowerCase(matrix[i][j]);
@@ -113,6 +115,7 @@ public class Main {
         System.out.println();
 
         System.out.println("Зашифрованная матрица");
+
         // вывод матрицы (зашифрованной)
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < M; j++) {
@@ -132,8 +135,9 @@ public class Main {
             if (alphabet[i]>0) System.out.print((char)(i+'a')+" = "+alphabet[i]+"; ");
         }
         System.out.println();
+
         //вывод самой частой буквы
-        System.out.print("Самая частые(ая) буквы: ");
+        System.out.print("Самая частая(ые) буква(ы): ");
         for (int i = 0; i<alphabet.length; i++){
             if (alphabet[i]==maxValue){
                 System.out.print((char)(i+'a')+" ");
