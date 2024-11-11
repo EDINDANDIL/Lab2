@@ -125,6 +125,7 @@ public class Main {
 
         // объявление / ввод всех переменных и структур.
 
+        System.out.print("Введите размер матрицы MxN: ");
         // ввод данных
         int N = in.nextInt();
         int M = in.nextInt();
@@ -135,6 +136,7 @@ public class Main {
         int cnt_glas = 0;
         int cnt_sogl = 0;
 
+        System.out.print("Введите "+N*M+" символов(ла) без пробелов: ");
         // считываем матрицу, параллельно считаю кол-во вхождений и распределяю по массивам гласные и согласные буквы
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < M; j++) {
@@ -166,8 +168,10 @@ public class Main {
             }
         }
 
+        System.out.print("Введите число K: ");
         // вводим сдвиг для шифра Цезаря
         int K = in.nextInt();
+        System.out.println();
 
         // начальный индекс каждого массива(согл и глас букв)
         int i_sogl = 0;
@@ -238,6 +242,8 @@ public class Main {
 
     }
 }
+
+
 ```
 
 ### 6. Анализ правильности решения
